@@ -1,9 +1,10 @@
 import React from 'react';
+import './Genre.css';
 
 const Genre = ({ genres, onSelectGenre }) => {
   return (
-    <div>
-      <h2>Select a Genre</h2>
+    <div classname='estilo-genero'>
+      <h2>Selecione el Género</h2>
       <ul>
         {genres.map((genre, index) => (
           <li key={index}>
@@ -16,3 +17,5 @@ const Genre = ({ genres, onSelectGenre }) => {
 };
 
 export default Genre;
+
+//Acá solo traduje el h2
