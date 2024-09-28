@@ -4,7 +4,7 @@ import './Genre.css';
 const Genre = ({ genres, onSelectGenre }) => {
   return (
     <div classname='estilo-genero'>
-      <h2>Selecione el Género</h2>
+      <h2>Género</h2>
       <ul>
         {genres.map((genre, index) => (
           <li key={index}>
