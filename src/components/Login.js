@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import'./Login.css'
+import './Login.css'
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -16,11 +16,11 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className="login-container" >
+    <div className = "container" >
       <form onSubmit={handleSubmit} className='login-form'>
         <h2>REGISTRO</h2>
           {error && <p role="alert" aria-live="assertive">{error}</p>}
-          <div className='input-group'>
+
             <label htmlFor="username">Usuario:</label>
               <input
                 id="username" 
@@ -29,8 +29,7 @@ const Login = ({ onLogin }) => {
                 onChange={(e) => setUsername(e.target.value)} 
                 aria-required="true"
               />
-          </div>
-          <div className='input-group'>
+
             <label htmlFor="password">Contraseña:</label>
               <input 
               id="password" 
@@ -39,7 +38,6 @@ const Login = ({ onLogin }) => {
               onChange={(e) => setPassword(e.target.value)} 
               aria-required="true"
               />
-          </div>
         <button type="submit" className='login-button'>Iniciar Seción</button>
       </form>
     </div>
