@@ -16,27 +16,31 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className="container-1" >
-      <h2>REGISTRO</h2>
-      {error && <p role="alert" aria-live="assertive">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Usuario:</label>
-        <input 
-          id="username" 
-          type="text" 
-          value={username} 
-          onChange={(e) => setUsername(e.target.value)} 
-          aria-required="true"
-        />
-        <label htmlFor="password">Contraseña:</label>
-        <input 
-          id="password" 
-          type="password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          aria-required="true"
-        />
-        <button className='btn-login' type="submit">Registrarse</button>
+    <div className="login-container" >
+      <form onSubmit={handleSubmit} className='login-form'>
+        <h2>REGISTRO</h2>
+          {error && <p role="alert" aria-live="assertive">{error}</p>}
+          <div className='input-group'>
+            <label htmlFor="username">Usuario:</label>
+              <input
+                id="username" 
+                type="text" 
+                value={username} 
+                onChange={(e) => setUsername(e.target.value)} 
+                aria-required="true"
+              />
+          </div>
+          <div className='input-group'>
+            <label htmlFor="password">Contraseña:</label>
+              <input 
+              id="password" 
+              type="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+              aria-required="true"
+              />
+          </div>
+        <button type="submit" className='login-button'>Iniciar Seción</button>
       </form>
     </div>
   );
