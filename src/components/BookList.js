@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import books from './Books'; // Lista de libros
+import './BookList.css'; // Estilos CSS
 
-const BookList = ({ genre, books }) => {
+const BookList = ({ genre }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (e) => {
@@ -13,7 +15,7 @@ const BookList = ({ genre, books }) => {
   );
 
   return (
-    <div>
+    <div className="book-list-container">
       <h2>Libros de {genre}</h2>
       
       {/* Search Bar */}
@@ -27,21 +29,29 @@ const BookList = ({ genre, books }) => {
       />
 
       {/* Book List */}
-      <ul>
+      <div className="book-grid">
         {filteredBooks.length > 0 ? (
-          filteredBooks.map((book, index) => (
-            <li key={index}>
-              <div className="book-card">
-                <h3>{book.title}</h3>
-                <p>{book.author}</p>
-                <button>Prestar</button>
-              </div>
-            </li>
+          filteredBooks.map((book) => (
+            <div className="book-card" key={book.id}>
+              <img src={book.image} alt={book.title} className="book-image" />
+              <h3>{book.title}</h3>
+              <p className="book-author">Autor: {book.author}</p>
+              <p className="book-synopsis">{book.synopsis}</p>
+              <p className={`availability ${book.available ? 'available' : 'unavailable'}`}>
+                {book.available ? 'Disponible' : 'No disponible'}
+              </p>
+              <button 
+                className="borrow-button" 
+                disabled={!book.available}
+              >
+                {book.available ? 'Prestar' : 'No disponible'}
+              </button>
+            </div>
           ))
         ) : (
-          <p>No se encotraron los libros.</p>
+          <p>No se encontraron libros.</p>
         )}
-      </ul>
+      </div>
     </div>
   );
 };
