@@ -1,5 +1,5 @@
-import imagen1 from './';
-import imagen2 from './assets/images/imagen2.jpg';
+import imagen1 from '/home/andres/Documentos/Modulo_5/library/src/components/imagenes/el-nombre-del-viento.jpeg';
+import imagen2 from '/home/andres/Documentos/Modulo_5/library/src/components/imagenes/cien-anos-de-soledad.jpg';
 
 const books = [
     {
@@ -7,7 +7,7 @@ const books = [
       title: "El nombre del viento",
       author: "Patrick Rothfuss",
       synopsis: "Un joven cuenta su historia sobre cómo se convirtió en un mago legendario.",
-      image: "ruta/a/imagen1.jpg",
+      image: "imagen1",
       available: true,
     },
     {
@@ -15,7 +15,7 @@ const books = [
       title: "Cien años de soledad",
       author: "Gabriel García Márquez",
       synopsis: "La historia de siete generaciones de la familia Buendía en el pueblo de Macondo.",
-      image: "ruta/a/imagen2.jpg",
+      image: "imagen2",
       available: false,
     },
     // Agrega más libros...
