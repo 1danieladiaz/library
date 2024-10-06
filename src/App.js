@@ -12,7 +12,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState(null);
 
-  const genres = ['Latinoamerica', 'Terror', 'Ciencia Ficción', 'Biografía'];
+  const genres = ['Latinoamérica', 'Terror', 'Ciencia Ficción', 'Biografía'];
   const books = [
     { title: 'Libro uno', author: 'Autor' },
     { title: 'Libro dos', author: 'Autor' },
@@ -30,6 +30,7 @@ const App = () => {
     
     <div>
       
+      
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
       ) : !selectedGenre ? (
@@ -41,6 +42,7 @@ const App = () => {
     </div>
     
   );
+
   
   <Footer/>
 };
