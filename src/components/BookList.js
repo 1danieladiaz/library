@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import books from './Books'; // Lista de libros
-import './BookList.css'; // Estilos CSS
+import books from './Books';
+import './BookList.css';
 
 const BookList = ({ genre, onBack }) => {
   const [searchQuery, setSearchQuery] = useState('');

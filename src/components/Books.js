@@ -426,7 +426,7 @@ const books = [
       image: imagen20,
       available: true,
     },
-    // Agrega más libros...
+
   ];
   
   export default books;

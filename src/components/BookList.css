@@ -15,7 +15,7 @@ h1 {
 }
 
 .search-bar {
-  width: 100%;
+  width: 50%;
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -26,9 +26,10 @@ h1 {
 
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
   justify-content: center;
+  align-items: center !important;
 }
 
 .book-card {
@@ -38,6 +39,8 @@ h1 {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+  max-height: 470px;
+  overflow: hidden;
 }
 
 .book-card:hover {
@@ -45,21 +48,31 @@ h1 {
 }
 
 .book-image {
-  width: 100%;
+  width: auto;
   height: auto;
-  border-radius: 10px;
+  border-radius: 5px;
   object-fit: cover;
-  margin-bottom: 15px;
+  max-height: 175px;
 }
 
-.book-author, .book-synopsis {
+.book-title{
+  font-size: 5vh !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #ccc;
+}
+
+.book-author{
   font-size: 14px;
   color: #555;
   margin-bottom: 10px;
 }
 
 .book-synopsis {
-  font-size: 0.9em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #666;
 }
 
