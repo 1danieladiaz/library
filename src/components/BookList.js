@@ -10,9 +10,10 @@ const BookList = ({ genre, onBack }) => {
   };
 
   const filteredBooks = books.filter((book) =>
-    (book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    book.author.toLowerCase().includes(searchQuery.toLowerCase())) &&
-    book.genre.toLowerCase() === genre.toLowerCase()
+    // Validación de que 'book.title', 'book.author' y 'book.genre' están definidos
+    (book.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+     book.author?.toLowerCase().includes(searchQuery.toLowerCase())) &&
+    book.genre?.toLowerCase() === genre.toLowerCase()
   );
 
   return (
@@ -34,7 +35,10 @@ const BookList = ({ genre, onBack }) => {
         {filteredBooks.length > 0 ? (
           filteredBooks.map((book) => (
             <div className="book-card" key={book.id}>
-              <img src={book.image} alt={book.title} className="book-image" />
+              {/* Verificación de que 'book.image' existe antes de mostrarla */}
+              {book.image && (
+                <img src={book.image} alt={book.title} className="book-image" />
+              )}
               <h3>{book.title}</h3>
               <p className="book-author">Autor: {book.author}</p>
               <p className="book-synopsis">{book.synopsis}</p>
