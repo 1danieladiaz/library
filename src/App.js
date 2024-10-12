@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Login from './components/Login';
-import Genre from './components/Genre';
-import BookList from './components/BookList';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import books from './components/Books';
+import Genre from './components/Genre';
+import Login from './components/Login';
+import BookList from './components/BookList';
 import './App.css';
 
 const App = () => {
