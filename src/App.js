@@ -4,19 +4,15 @@ import Genre from './components/Genre';
 import BookList from './components/BookList';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import books from './components/Books';
 import './App.css';
 
 const App = () => {
-  <Header/>
-  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState(null);
-
-  const genres = ['Latinoamerica', 'Terror', 'Ciencia Ficción', 'Biografía'];
-  const books = [
-    { title: 'Libro uno', author: 'Autor' },
-    { title: 'Libro dos', author: 'Autor' },
-  ];
+  const [showGenres, setShowGenres] = useState(true);
+  const [filteredBooks, setFilteredBooks] = useState(books);
+  const genres = ['Latinoamérica', 'Terror', 'Ciencia Ficción', 'Biografía'];
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -24,27 +20,38 @@ const App = () => {
 
   const handleSelectGenre = (genre) => {
     setSelectedGenre(genre);
+    setShowGenres(false);
+  };
+
+  const handleBackToGenres = () => {
+    setShowGenres(true);
+  };
+
+  const handleSearch = (query) => {
+    const lowercasedQuery = query.toLowerCase();
+    const filtered = books.filter(book => 
+      book.title.toLowerCase().includes(lowercasedQuery)
+    );
+    setFilteredBooks(filtered);
   };
 
   return (
-    
-    <div>
-      
+    <div className="app-container">
+      <Header onSearch={handleSearch} />
+
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
-      ) : !selectedGenre ? (
+      ) : showGenres ? (
         <Genre genres={genres} onSelectGenre={handleSelectGenre} />
       ) : (
-        <BookList genre={selectedGenre} books={books} />
+        <div>
+          <BookList genre={selectedGenre} books={filteredBooks} onBack={handleBackToGenres}/>
+        </div>
       )}
-     
+
+      <Footer />
     </div>
-    
   );
-  
-  <Footer/>
 };
-
-
 
 export default App;

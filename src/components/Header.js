@@ -1,18 +1,19 @@
-import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import React from 'react';
+import './Header.css';
 
-const Header = ()=>(
-    <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">libreria Virtual</Navbar.Brand>
-        <Navbar.Toggle  aria-controls="basic-navbar-nab"/>
-        <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-                <Nav.Link href="/">Inicio</Nav.Link>
-                
-            </Nav>
-        </Navbar.Collapse>
-    </Navbar>
+const Header = ({ onSearch }) => {
+  const handleSearch = (event) => {
+    onSearch(event.target.value);
+  };
 
-);
+  return (
+    <header className="header">
+      <h1>Mi Biblioteca</h1>
+      <div className="search-container">
+       
+      </div>
+    </header>
+  );
+};
 
 export default Header;

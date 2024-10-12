@@ -1,93 +1,94 @@
 .book-list-container {
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
+  padding: 20px;
+}
 
-  h1{
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ccc;
-  }
-  
-  .search-bar {
-    padding: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  
-  .book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .book-card {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    text-align: center;
-  }
-  
-  .book-card h3 {
-    margin: 10px 0 5px;
-    font-size: 18px;
-  }
-  
-  .book-author, .book-synopsis {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .book-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-    border-radius: 5px;
-  }
-  
-  .book-synopsis {
-    font-size: 13px;
-    color: #777;
-  }
-  
-  .availability {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .available {
-    color: green;
-  }
-  
-  .unavailable {
-    color: red;
-  }
-  
-  .book-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .borrow-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .borrow-button:disabled {
-    background-color: grey;
-    cursor: not-allowed;
-  }
-  
-  .borrow-button:hover:not(:disabled) {
-    background-color: #0056b3;
-  }
-  
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.book-card {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.book-author {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.book-synopsis {
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.availability {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.available {
+  color: green;
+}
+
+.unavailable {
+  color: red;
+}
+
+.borrow-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #070769;
+  color: white;
+  cursor: pointer;
+}
+
+.borrow-button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #070769;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #5050a5;
+}

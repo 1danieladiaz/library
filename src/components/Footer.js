@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
+import './Footer.css'; // Importar los estilos del Footer
 
-const Footer = ()=>(
-    <footer className="bg-light text-center text-lg-start">
-        <div className="text-center p-3">
-        © 2024 Libreria Virtual
-        <a href="/">www.libreria-virtual.com</a>
-        </div>
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <p>&copy; 2024 Biblioteca Online. Todos los derechos reservados.</p>
     </footer>
-);
+  );
+};
 
 export default Footer;

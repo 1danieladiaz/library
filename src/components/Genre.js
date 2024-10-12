@@ -3,8 +3,8 @@ import './Genre.css';
 
 const Genre = ({ genres, onSelectGenre }) => {
   return (
-    <div classname='estilo-genero'>
-      <h2>Género</h2>
+    <div className="estilo-genero">
+      <h2>Selecciona un género</h2>
       <ul>
         {genres.map((genre, index) => (
           <li key={index}>
@@ -17,5 +17,6 @@ const Genre = ({ genres, onSelectGenre }) => {
 };
 
 export default Genre;
+
 
 //Acá solo traduje el h2

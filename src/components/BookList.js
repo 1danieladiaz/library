@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import books from './Books'; // Lista de libros
 import './BookList.css'; // Estilos CSS
 
-const BookList = ({ genre }) => {
+const BookList = ({ genre, onBack }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (e) => {
@@ -10,14 +10,15 @@ const BookList = ({ genre }) => {
   };
 
   const filteredBooks = books.filter((book) =>
-    book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    book.author.toLowerCase().includes(searchQuery.toLowerCase())
+    (book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    book.author.toLowerCase().includes(searchQuery.toLowerCase())) &&
+    book.genre.toLowerCase() === genre.toLowerCase()
   );
 
   return (
     <div className="book-list-container">
       <h2>Libros de {genre}</h2>
-      
+
       {/* Search Bar */}
       <input 
         type="text"
@@ -52,6 +53,11 @@ const BookList = ({ genre }) => {
           <p>No se encontraron libros.</p>
         )}
       </div>
+
+      {/* Botón de regresar */}
+      <button className="back-button" onClick={onBack}>
+        Volver Atrás
+      </button>
     </div>
   );
 };
