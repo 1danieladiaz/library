@@ -38,14 +38,14 @@ const App = () => {
   return (
     <div className="app-container">
       <Header onSearch={handleSearch} />
-
+  
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
       ) : showGenres ? (
         <Genre genres={genres} onSelectGenre={handleSelectGenre} />
       ) : (
         <div>
-          <BookList genre={selectedGenre} books={filteredBooks} onBack={handleBackToGenres}/>
+          <BookList genre={selectedGenre} books={filteredBooks} onBack={handleBackToGenres} />
         </div>
       )}
 
