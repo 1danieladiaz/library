@@ -22,9 +22,8 @@ const Body = () => {
     };
   
     return (
-      
-      <div>
-        
+      //Esto debería hacer que el Dark Mode funcione
+      <div className={`Body ${darkMode ? 'dark-mode' : ''}`}>
         
         {!isLoggedIn ? (
           <Login onLogin={handleLogin} />

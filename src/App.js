@@ -13,6 +13,7 @@ const App = () => {
   const [showGenres, setShowGenres] = useState(true);
   const [filteredBooks, setFilteredBooks] = useState(books);
   const genres = ['Latinoamérica', 'Terror', 'Ciencia Ficción', 'Biografía'];
+  const [darkMode, setDarkMode] = useState(false);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -35,9 +36,14 @@ const App = () => {
     setFilteredBooks(filtered);
   };
 
+  const toggleMode = () => {
+    setDarkMode(!darkMode);
+}; //Esto debería hacer que funcione el Dark Mode
+
   return (
     <div className="app-container">
       <Header onSearch={handleSearch} />
+      <button className="btn-change" onClick={toggleMode}>Dark Mode</button>
 
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
