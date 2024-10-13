@@ -176,7 +176,7 @@ const books = [
 
     {
       id: 15,
-      title: "Un Mundo Felix",
+      title: "Un Mundo Feliz",
       author: "Aldous Huxley",
       synopsis: "La sociedad vive en una felicidad artificial gracias a la droga soma, que anula la voluntad y las ideas de quienes la toman.",
       categoria: "Ciencia Ficción",
@@ -193,7 +193,7 @@ const books = [
       categoria: "Ciencia Ficción",
       image: imagen16,
       available: true,
-      genre: "Ciencia Ficción",
+      genre: "Biografía",
     },
 
     {
