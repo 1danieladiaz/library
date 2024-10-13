@@ -5,7 +5,7 @@
 }
 
 /* Tema predeterminado */
-.body {
+body {
   background-color: #070769;
   color: black;
   display: flex;
@@ -14,9 +14,15 @@
 }
 
 /* Tema de alto contraste */
-.body.high-contrast {
+body.high-contrast {
   background-color: black;
   color: yellow;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
 }
 
 button {
@@ -24,10 +30,28 @@ button {
   margin: 5px;
 }
 
+/* Estilo de botones en modo alto contraste */
 button.high-contrast {
   background-color: yellow;
   color: black;
   border: 2px solid black;
+}
+
+/* Estilo de botones en modo oscuro */
+body.dark-mode button {
+  background-color: #007bff;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+button:hover {
+  background-color: #5050a5;
+  color: white;
 }
 
 /* Header predeterminado */
@@ -46,6 +70,12 @@ header {
 header.high-contrast {
   background-color: black;
   color: yellow;
+}
+
+/* Header modo oscuro */
+header.dark-mode {
+  background-color: #121212;
+  color: white;
 }
 
 /* Footer predeterminado */
@@ -67,4 +97,27 @@ footer {
 footer.high-contrast {
   background-color: black;
   color: yellow;
+}
+
+/* Footer modo oscuro */
+footer.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+/* Botón para cambiar tema */
+.btn-change {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-change:hover {
+  background-color: #0056b3;
+  color: white;
 }

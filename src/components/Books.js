@@ -211,15 +211,15 @@ const books = [
     genre: "Biografía",
   },
   {
-  id: 20,
-  title: "Leonardo Da Vinci",
-  author: "Walter Isaacson",
-  synopsis: "El autor de Steve Jobs nos cautiva con la vida del genio más creativo de la historia en esta fascinante biografía.",
-  categoria: "Biografía",
-  image: imagen20,
-  available: true,
-  genre: "Biografía",
-},
+    id: 20,
+    title: "Leonardo Da Vinci",
+    author: "Walter Isaacson",
+    synopsis: "El autor de Steve Jobs nos cautiva con la vida del genio más creativo de la historia en esta fascinante biografía.",
+    categoria: "Biografía",
+    image: imagen20,
+    available: true,
+    genre: "Biografía",
+  },
 ];
 
 export default books;
