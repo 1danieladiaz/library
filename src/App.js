@@ -13,7 +13,6 @@ const App = () => {
   const [showGenres, setShowGenres] = useState(true);
   const [filteredBooks, setFilteredBooks] = useState(books);
   const [highContrast, setHighContrast] = useState(false);
-  const [darkMode, setDarkMode] = useState(false); // Agregar darkMode state
   const genres = ['Latinoamérica', 'Terror', 'Ciencia Ficción', 'Biografía'];
 
   const handleLogin = () => {
@@ -41,22 +40,14 @@ const App = () => {
     setHighContrast(!highContrast);
   };
 
-  const toggleMode = () => {
-    setDarkMode(!darkMode); // Cambia el estado de darkMode
-  };
-
   // Aplicar clases según el estado de alto contraste o modo oscuro
   useEffect(() => {
     if (highContrast) {
       document.body.classList.add('high-contrast');
-      document.body.classList.remove('dark-mode');
-    } else if (darkMode) {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('high-contrast');
     } else {
       document.body.classList.remove('high-contrast', 'dark-mode');
     }
-  }, [highContrast, darkMode]);
+  }, [highContrast]);
 
   return (
     <div className="app-container">
@@ -65,11 +56,6 @@ const App = () => {
       {/* Botón para activar/desactivar Alto Contraste */}
       <button className={highContrast ? "high-contrast" : ""} onClick={toggleContrast}>
         {highContrast ? 'Desactivar Alto Contraste' : 'Activar Alto Contraste'}
-      </button>
-
-      {/* Botón para activar/desactivar Modo Oscuro */}
-      <button className="btn-change" onClick={toggleMode}>
-        {darkMode ? 'Desactivar Modo Oscuro' : 'Activar Modo Oscuro'}
       </button>
 
       {!isLoggedIn ? (

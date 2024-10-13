@@ -1,11 +1,5 @@
-/* Estilos generales */
-.app-container {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
 
-/* Tema predeterminado */
-body {
+.body {
   background-color: #070769;
   color: black;
   display: flex;
@@ -14,16 +8,11 @@ body {
 }
 
 /* Tema de alto contraste */
-body.high-contrast {
+.body.high-contrast {
   background-color: black;
   color: yellow;
 }
 
-/* Modo oscuro */
-body.dark-mode {
-  background-color: #121212;
-  color: #fff;
-}
 
 button {
   padding: 10px;
