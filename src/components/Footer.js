@@ -1,10 +1,9 @@
 import React from 'react';
-import './Footer.css'; // Importar los estilos del Footer
 
-const Footer = () => {
+const Footer = ({ highContrast }) => {
   return (
-    <footer className="footer">
-      <p>&copy; 2024 Biblioteca Online. Todos los derechos reservados.</p>
+    <footer className={highContrast ? 'high-contrast' : ''}>
+      <p>© 2024 Todos los derechos reservados</p>
     </footer>
   );
 };

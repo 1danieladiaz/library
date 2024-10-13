@@ -17,6 +17,3 @@ const Genre = ({ genres, onSelectGenre }) => {
 };
 
 export default Genre;
-
-
-//Acá solo traduje el h2

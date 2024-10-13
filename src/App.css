@@ -1,0 +1,70 @@
+/* Estilos generales */
+.app-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Tema predeterminado */
+.body {
+  background-color: #070769;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tema de alto contraste */
+.body.high-contrast {
+  background-color: black;
+  color: yellow;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+}
+
+button.high-contrast {
+  background-color: yellow;
+  color: black;
+  border: 2px solid black;
+}
+
+/* Header predeterminado */
+header {
+  background-color: #070769;
+  padding: 2px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Header alto contraste */
+header.high-contrast {
+  background-color: black;
+  color: yellow;
+}
+
+/* Footer predeterminado */
+footer {
+  background-color: #070769;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Footer alto contraste */
+footer.high-contrast {
+  background-color: black;
+  color: yellow;
+}

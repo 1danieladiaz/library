@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import books from './components/Books';
@@ -12,6 +12,7 @@ const App = () => {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [showGenres, setShowGenres] = useState(true);
   const [filteredBooks, setFilteredBooks] = useState(books);
+  const [highContrast, setHighContrast] = useState(false);
   const genres = ['Latinoamérica', 'Terror', 'Ciencia Ficción', 'Biografía'];
 
   const handleLogin = () => {
@@ -35,9 +36,25 @@ const App = () => {
     setFilteredBooks(filtered);
   };
 
+  const toggleContrast = () => {
+    setHighContrast(!highContrast);
+  };
+
+  useEffect(() => {
+    if (highContrast) {
+      document.body.classList.add('high-contrast');
+    } else {
+      document.body.classList.remove('high-contrast');
+    }
+  }, [highContrast]);
+
   return (
     <div className="app-container">
-      <Header onSearch={handleSearch} />
+      <Header onSearch={handleSearch} highContrast={highContrast} />
+
+      <button className={highContrast ? "high-contrast" : ""} onClick={toggleContrast}>
+        {highContrast ? 'Desactivar Alto Contraste' : 'Activar Alto Contraste'}
+      </button>
 
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
@@ -49,7 +66,7 @@ const App = () => {
         </div>
       )}
 
-      <Footer />
+      <Footer highContrast={highContrast} />
     </div>
   );
 };

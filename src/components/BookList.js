@@ -10,7 +10,6 @@ const BookList = ({ genre, onBack }) => {
   };
 
   const filteredBooks = books.filter((book) =>
-    // Validación de que 'book.title', 'book.author' y 'book.genre' están definidos
     (book.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
      book.author?.toLowerCase().includes(searchQuery.toLowerCase())) &&
     book.genre?.toLowerCase() === genre.toLowerCase()
@@ -20,7 +19,6 @@ const BookList = ({ genre, onBack }) => {
     <div className="book-list-container">
       <h2>Libros de {genre}</h2>
 
-      {/* Search Bar */}
       <input 
         type="text"
         value={searchQuery}
@@ -30,12 +28,10 @@ const BookList = ({ genre, onBack }) => {
         aria-label="Search books"
       />
 
-      {/* Book List */}
       <div className="book-grid">
         {filteredBooks.length > 0 ? (
           filteredBooks.map((book) => (
             <div className="book-card" key={book.id}>
-              {/* Verificación de que 'book.image' existe antes de mostrarla */}
               {book.image && (
                 <img src={book.image} alt={book.title} className="book-image" />
               )}
@@ -58,11 +54,7 @@ const BookList = ({ genre, onBack }) => {
           <p>No se encontraron libros.</p>
         )}
       </div>
-
-      {/* Botón de regresar */}
-      <button className="back-button" onClick={onBack}>
-        Volver Atrás
-      </button>
+      <button className="back-button" onClick={onBack}>Volver Atrás</button>
     </div>
   );
 };
