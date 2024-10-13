@@ -26,18 +26,6 @@ button.high-contrast {
   border: 2px solid black;
 }
 
-/* Estilo de botones en modo oscuro */
-body.dark-mode button {
-  background-color: #007bff;
-  color: #ffffff;
-  transition: background-color 0.3s ease;
-}
-
-body.dark-mode button:hover {
-  background-color: #0056b3;
-  color: white;
-}
-
 button:hover {
   background-color: #5050a5;
   color: white;
