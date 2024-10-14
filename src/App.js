@@ -51,7 +51,12 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <Header onSearch={handleSearch} />
+      <Header onSearch={handleSearch} highContrast={highContrast} />
+
+      {/* Botón para activar/desactivar Alto Contraste */}
+      <button className={highContrast ? "high-contrast" : ""} onClick={toggleContrast}>
+        {highContrast ? 'Desactivar Alto Contraste' : 'Activar Alto Contraste'}
+      </button>
 
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
@@ -59,7 +64,7 @@ const App = () => {
         <Genre genres={genres} onSelectGenre={handleSelectGenre} />
       ) : (
         <div>
-          <BookList genre={selectedGenre} books={filteredBooks} onBack={handleBackToGenres} />
+          <BookList genre={selectedGenre} books={filteredBooks} onBack={handleBackToGenres}/>
         </div>
       )}
 
