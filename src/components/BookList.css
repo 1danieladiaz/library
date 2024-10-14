@@ -1,7 +1,42 @@
 .book-list-container {
+  background-color: #070769;
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
   padding: 20px;
-  max-width: auto;
-  margin: 0 auto;
+}
+
+.high-contrast .book-list-container {
+  background-color: black;
+  color: yellow;
+}
+
+.app-container{
+  background-color: #070769;
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.high-contrast .app-container {
+  background-color: black;
+  color: yellow;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  justify-content: center;
+  align-items: center !important;
+  padding: 20px;
 }
 
 h1 {
@@ -24,23 +59,20 @@ h1 {
   box-sizing: border-box;
 }
 
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-  justify-content: center;
-  align-items: center !important;
-}
-
 .book-card {
   background-color: #f5f5f5;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  max-height: 470px;
+  max-height: 450px;
   overflow: hidden;
+}
+
+.high-contrast .book-card {
+  background-color: rgb(66, 66, 66);
+  color: rgb(255, 255, 253);
 }
 
 .book-card:hover {
@@ -111,10 +143,11 @@ h1 {
   background-color: #5050a5;
 }
 
-.back-button {
+
+.back-button{
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #070769;
+  background-color: #4cafaa;
   color: white;
   border: none;
   border-radius: 5px;
@@ -123,6 +156,6 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-.back-button:hover {
-  background-color: #5050a5;
+.back-button:hover{
+  background-color: #a08f45;
 }

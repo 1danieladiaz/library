@@ -1,17 +1,9 @@
 import React from 'react';
-import './Header.css';
 
-const Header = ({ onSearch }) => {
-  const handleSearch = (event) => {
-    onSearch(event.target.value);
-  };
-
+const Header = ({ highContrast }) => {
   return (
-    <header className="header">
-      <h1>Mi Biblioteca</h1>
-      <div className="search-container">
-       
-      </div>
+    <header className={highContrast ? 'high-contrast' : ''}>
+      <h1>Mi Aplicación de Libros</h1>
     </header>
   );
 };
