@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import books from './Books';
 import './BookList.css';
 
-const BookList = ({ genre, onBack }) => {
+const BookList = ({ genre, addToCart, onBack }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (e) => {
@@ -38,13 +38,13 @@ const BookList = ({ genre, onBack }) => {
               <h3>{book.title}</h3>
               <p className="book-author">Autor: {book.author}</p>
               <p className="book-synopsis">{book.synopsis}</p>
-              <p className="book-categoria">{book.categoria}</p>
               <p className={`availability ${book.available ? 'available' : 'unavailable'}`}>
                 {book.available ? 'Disponible' : 'No disponible'}
               </p>
               <button 
                 className="borrow-button" 
                 disabled={!book.available}
+                onClick={() => addToCart(book)}  // Pasando todo el objeto "book"
               >
                 {book.available ? 'Prestar' : 'No disponible'}
               </button>
