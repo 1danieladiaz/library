@@ -11,8 +11,9 @@ const BookList = ({ genre, addToCart, onBack }) => {
 
   const filteredBooks = books.filter((book) =>
     (book.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-     book.author?.toLowerCase().includes(searchQuery.toLowerCase())) &&
-    book.genre?.toLowerCase() === genre.toLowerCase()
+     book.author?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+     book.isbn?.toLowerCase().includes(searchQuery.toLowerCase())) &&
+     book.genre?.toLowerCase() === genre.toLowerCase()
   );
 
   return (
@@ -38,6 +39,7 @@ const BookList = ({ genre, addToCart, onBack }) => {
               <h3>{book.title}</h3>
               <p className="book-author">Autor: {book.author}</p>
               <p className="book-synopsis">{book.synopsis}</p>
+              <p className="book-isbn">{book.isbn}</p>
               <p className={`availability ${book.available ? 'available' : 'unavailable'}`}>
                 {book.available ? 'Disponible' : 'No disponible'}
               </p>
