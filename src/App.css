@@ -95,6 +95,7 @@ footer.dark-mode {
   transition: background-color 0.3s ease;
 }
 
+
 .btn-change:hover {
   background-color: #0056b3;
   color: white;

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './Login.css';  
+import './Login.css';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  const [isSignup, setIsSignup] = useState(false); 
+  const [isSignup, setIsSignup] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +17,7 @@ const Login = ({ onLogin }) => {
     }
 
     const url = isSignup ? 'http://localhost:3000/signup' : 'http://localhost:3000/login';
-    
+
     const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -31,10 +31,10 @@ const Login = ({ onLogin }) => {
     if (response.status === 200) {
       alert(result);
       if (!isSignup) {
-        onLogin();  
+        onLogin();
       }
     } else {
-      setError(result);  
+      setError(result);
     }
   };
 
@@ -80,11 +80,13 @@ const Login = ({ onLogin }) => {
           {isSignup ? 'Crear Cuenta' : 'Iniciar Sesión'}
         </button>
       </form>
-      <button onClick={() => setIsSignup(!isSignup)}>
+      <div className='container-2'> 
+        <button className="btn-create" onClick={() => setIsSignup(!isSignup)}>
         {isSignup ? '¿Ya tienes cuenta? Iniciar Sesión' : '¿No tienes cuenta? Crear una'}
       </button>
+      </div>
     </div>
-    
+
   );
 };
 
