@@ -24,7 +24,7 @@ const BookList = ({ genre, addToCart, onBack }) => {
         type="text"
         value={searchQuery}
         onChange={handleSearch}
-        placeholder="Busque un libro por título o autor"
+        placeholder="Busque un libro por título, autor o ISBN"
         className="search-bar"
         aria-label="Search books"
       />
